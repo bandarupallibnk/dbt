@@ -12,7 +12,7 @@ profile: 'dbt_tutorial'
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-source-paths: ["models"]
+source-paths: ["models/customer/"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
 data-paths: ["data"]
@@ -35,4 +35,6 @@ models:
   dbt_tutorial:
       # Applies to all files under models/example/
       example:
+          materialized: view
+      customer:
           materialized: view
